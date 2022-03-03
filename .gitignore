@@ -1,0 +1,8 @@
+.cache
+.config
+__pycache__
+pyproject.toml
+poetry.log
+replit.nix
+venv
+.upm
