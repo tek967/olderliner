@@ -2,6 +2,7 @@ import pygame
 
 class character:
   def __init__(self):
+    check_event=pygame.event
 
     self.width = None
     self.height = None
@@ -27,6 +28,7 @@ class character:
     
   def say(speech):
     print(speech)
-  check_event=pygame.event
+
+  
   if check_event==quit:
     pygame.QUIT()

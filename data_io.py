@@ -10,6 +10,7 @@ class dataIo:
     self.pinWriter = open(".linerpin", "w")
     self.bankwriter=open(".linerbank","w")
     self.bal=bkbal
+
   def withdraw(withdrawAmount, self):
     writeBf = self.balance + withdrawAmount
     self.file.write(writeBf)
@@ -36,5 +37,6 @@ class dataIo:
   def writePin(newPin, self):
     self.pinWriter.write(newPin)
     return newPin
+    
   def save_platform(self):
     pass
