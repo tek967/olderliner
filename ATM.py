@@ -1,4 +1,6 @@
-import os,sys,time
+import os
+import sys
+from os.path import exists
 from data_io import *
 import threading
 
@@ -8,7 +10,7 @@ class ATM:
     self.loginState = False
     self.miscBuf = None
     self.bal = open(".linerbal","r")
-    self.pinFile = (".linerpin","r")
+    self.pinFile = open(".linerpin","r")
 
   def initAtm(self):
     os.system("clear")
@@ -34,7 +36,7 @@ class ATM:
     
   def createPin(create, self):
     if (create == True):
-      if (os.exists(self.pinFile)):
+      if (exists(self.pinFile)):
         print("You already created the pin, just log in.")
         pass
       elif (create == False):
