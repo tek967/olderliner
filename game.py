@@ -1,4 +1,3 @@
-from distutils.debug import DEBUG
 import pygame
 from data_io import settingsData
 

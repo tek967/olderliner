@@ -1,3 +1,4 @@
+from ntpath import join
 import sys 
 from array import *
 from ATM import bank as bkbal
@@ -14,7 +15,20 @@ class settingsData:
     settingArray[0][1] = settingsFormattedFile[1]
     settingArray[0][2] = settingsFormattedFile[2]
 
+  def writeTableToFile(self):
+    for i in self.settingArray:
+      self.settingsFile.write(self.settingArray[i])
+      for j in i:
+        self.settingsFile.write(self.settingArray[i][j])
 
+
+  def writeSetting(entry, ct1, ct2, self):
+    for i in self.settingsArray:
+      if i == entry:
+        self.settingArray[i][1] = ct1
+        self.settingArray[i][2] = ct2
+    settingsData.writeTableToFile()
+          
 
 
 class dataIo: 

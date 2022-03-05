@@ -14,6 +14,8 @@ class shop:
     self.price=open(".linerprice")
 
   def buy(self):
-    if self.bal >= 
+    if self.bal >= 0:
+      pass
+    pass
   
   

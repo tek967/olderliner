@@ -87,8 +87,8 @@ class ATM:
 
   def ATMMenu(self):
     while (True):
-      self.p=ATM #self is none type, gotta fix this.
-      # self.initAtm(None)
+      self.p = ATM
+      self.p.initAtm() 
       choice = None
   
       print("Welcome to the ATM!\n" + 

@@ -1,7 +1,12 @@
 ## Todo List
 
+* Write the settings engine
+* Do MapIO
+* Start writing the actual game
 * Finnish the bank
-* Write the Main menu
 * Write Sohpyy/Shopy
-* Start the pygame window work
+
+#### Potential Projects:
+* Make music
+* Port it to C# + Unity
 
