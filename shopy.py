@@ -1,9 +1,10 @@
 from ATM import ATM
+from array import *
 class shop:
   def __init__(self):
     self.catalog = [ # ints on the middle are prices
-      # old: club
-      # old: spiderweb
+      ["club", 0]
+      ["spiderweb", 0]
       ["firstaid", 0] # old: firstaidkit
       ["rocketlauncher", 0]
       ["fly", 0]
@@ -34,6 +35,7 @@ class shop:
       pass
     elif catalogselection == "6":
       pass
-
+    elif catalogselection == "7":
+      pass
   
   

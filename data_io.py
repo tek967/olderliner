@@ -1,7 +1,5 @@
-from ntpath import join
 import sys 
 from array import *
-from ATM import bank as bkbal
 
 class settingsData:
   def __init__(self):
@@ -34,12 +32,11 @@ class settingsData:
 class dataIo: 
   def __init__(self):
     writeBf = None
-    self.balance = open(".lineratm", "r")
+    self.bal = open(".lineratm", "r")
     self.file = open(".lineratm", "w")
     self.pin = open(".linerpin", "r")
     self.pinWriter = open(".linerpin", "w")
     self.bankwriter=open(".linerbank","w")
-    self.bal=bkbal
 
   def withdraw(withdrawAmount, self):
     writeBf = self.balance + withdrawAmount

@@ -1,5 +1,5 @@
 import os,sys,time
-from data_io import dataIo
+from data_io import *
 import threading
 
 class ATM:
@@ -10,16 +10,8 @@ class ATM:
     self.bal = open(".linerbal","r")
     self.pinFile = (".linerpin","r")
 
-    def clear():
-      os.system("clear")
-      
-  def bank(self):
-    time.Time()
-    time.sleep(3600)
-    threading.thread()
-
   def initAtm(self):
-    self.clear()
+    os.system("clear")
     print("Welcome to the ATM!")
     
   def withdraw(self):
@@ -87,13 +79,13 @@ class ATM:
 
   def ATMMenu(self):
     while (True):
-      self.p = ATM
-      self.p.initAtm() 
+      p = ATM
+      p.initAtm(None) 
       choice = None
   
       print("Welcome to the ATM!\n" + 
             "What would you like to do?\n" + 
-            "1. Log into the ATM \[arstarst\]\n" + 
+            "1. Log into the ATM [should show the login state]\n" + 
             "2. Create an ATM Pin\n" + 
             "3. Change your ATM Pin\n" + 
             "4. Withdraw some money from your wallet\n" + 
@@ -105,17 +97,17 @@ class ATM:
       choice = input("What to do?: ")
   
       if choice == "1":
-        self.p.login(None)
+        p.login(None)
       elif choice == "2":
-        self.p.createPin(True, None)
+        p.createPin(True, None)
       elif choice == "3":
-        self.p.changePin(None)
+        p.changePin(None)
       elif choice == "4":
-        self.p.withdraw(None)
+        p.withdraw(None)
       elif choice == "5":
-        self.p.deposit(None)
+        p.deposit(None)
       elif choice=="6":
         sys.exit()
       elif choice=="7":
-        self.p.bank(None)
+        p.bank(None)
 

@@ -1,9 +1,9 @@
 ## Todo List
 
-* Write Sohpyy/Shopy
+* Write Sohpyy/Shopy **on hold**
 * Write the settings engine
 * Do MapIO
-* Start writing the actual game
+* Start writing the actual game **on hold**
 * Finnish the bank
 
 #### Potential Projects:
