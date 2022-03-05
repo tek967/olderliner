@@ -13,9 +13,5 @@ class shop:
                      "invincible"]
     self.price=open(".linerprice")
 
-  def buy(self):
-    if self.bal >= 0:
-      pass
-    pass
   
   
