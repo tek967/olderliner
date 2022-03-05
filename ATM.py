@@ -9,7 +9,7 @@ class ATM:
     self.miscBuf = None
     self.bal = open(".linerbal","r")
     self.pinFile = (".linerpin","r")
-    self.bankbal=open(".linerbankbal","r")
+
     def clear():
       os.system("clear")
       
@@ -118,4 +118,4 @@ class ATM:
         sys.exit()
       elif choice=="7":
         self.p.bank(None)
-ATM.ATMMenu(None) # Here you are making it None. Self will be None.
+
