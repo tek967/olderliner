@@ -1,19 +1,22 @@
-import sys
-import os
+import os,sys,time
 from data_io import dataIo
+import threading
 
 class ATM:
   def __init__(self):
     self.inputBuffer = None
     self.loginState = False
     self.miscBuf = None
-    self.bankbal = open(".linerbank","r")
-    self.pinFile = ".linerpin"
+    self.bal = open(".linerbal","r")
+    self.pinFile = (".linerpin","r")
+    self.bankbal=open(".linerbankbal","r")
     def clear():
       os.system("clear")
       
   def bank(self):
-    pass
+    time.Time()
+    time.sleep(3600)
+    threading.thread()
 
   def initAtm(self):
     self.clear()
@@ -80,38 +83,39 @@ class ATM:
       elif (dataIo.getPin(None) != verifyPin):
         print("You didn't enter the correct PIN.")
       else:
-        self.loginState = true
+        self.loginState = True
 
   def ATMMenu(self):
-    while (true):
-      self.initAtm()
+    while (True):
+      self.p=ATM #self is none type, gotta fix this.
+      # self.initAtm(None)
       choice = None
   
       print("Welcome to the ATM!\n" + 
             "What would you like to do?\n" + 
-            "1. Log into the ATM \[{}\]\n" + 
+            "1. Log into the ATM \[arstarst\]\n" + 
             "2. Create an ATM Pin\n" + 
             "3. Change your ATM Pin\n" + 
             "4. Withdraw some money from your wallet\n" + 
-            "5. Same money from your point store into your wallet"
-            .format(this.loginState))
+            "5. Same money from your point store into your wallet\n"
+            "6. exit\n"
+            "7. *testing* bank\n"
+           )
+      
       choice = input("What to do?: ")
   
-      if (choice == "1"):
-        self.login(None)
-      elif (choice == "2"):
-        self.createPin(True, None)
-      elif (choice == "3"):
-        self.changePin(None)
-      elif (choice == "4"):
-        self.withdraw(None)
-      elif (choice == "5"):
-        self.deposit(None)
-
-
-    
-    
-        
-        
-        
-      
+      if choice == "1":
+        self.p.login(None)
+      elif choice == "2":
+        self.p.createPin(True, None)
+      elif choice == "3":
+        self.p.changePin(None)
+      elif choice == "4":
+        self.p.withdraw(None)
+      elif choice == "5":
+        self.p.deposit(None)
+      elif choice=="6":
+        sys.exit()
+      elif choice=="7":
+        self.p.bank(None)
+ATM.ATMMenu(None) # Here you are making it None. Self will be None.

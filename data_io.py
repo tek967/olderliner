@@ -1,7 +1,23 @@
 import sys 
+from array import *
 from ATM import bank as bkbal
+
+class settingsData:
+  def __init__(self):
+    settingsFile = open(".linersettings")
+    settingsFormattedFile = settingsFile.readlines()
+
+    settingArray = [
+      ["winsize" , None, None]
+    ]
+
+    settingArray[0][1] = settingsFormattedFile[1]
+    settingArray[0][2] = settingsFormattedFile[2]
+
+
+
+
 class dataIo: 
-  
   def __init__(self):
     writeBf = None
     self.balance = open(".lineratm", "r")
@@ -37,6 +53,6 @@ class dataIo:
   def writePin(newPin, self):
     self.pinWriter.write(newPin)
     return newPin
-    
+
   def save_platform(self):
     pass
