@@ -3,21 +3,22 @@ from array import *
 
 class settingsData:
   def __init__(self):
-    settingsFile = open(".linersettings")
-    settingsFormattedFile = settingsFile.readlines()
+    self.settingsFile = open(".linersettings")
+    self.writeSettings = open(".linersettings")
+    self.settingsFormattedFile = self.settingsFile.readlines()
 
     settingArray = [
       ["winsize" , None, None]
     ]
 
-    settingArray[0][1] = settingsFormattedFile[1]
-    settingArray[0][2] = settingsFormattedFile[2]
+    settingArray[0][1] = self.settingsFormattedFile[1]
+    settingArray[0][2] = self.settingsFormattedFile[2]
 
   def writeTableToFile(self):
     for i in self.settingArray:
-      self.settingsFile.write(self.settingArray[i])
+      self.writeSettings.write(self.settingArray[i])
       for j in i:
-        self.settingsFile.write(self.settingArray[i][j])
+        self.writeSettings.write(self.settingArray[i][j])
 
 
   def writeSetting(entry, ct1, ct2, self):
@@ -31,29 +32,28 @@ class settingsData:
 
 class dataIo: 
   def __init__(self):
-    writeBf = None
-    self.bal = open(".lineratm", "r")
-    self.file = open(".lineratm", "w")
-    self.pin = open(".linerpin", "r")
-    self.pinWriter = open(".linerpin", "w")
-    self.bankwriter=open(".linerbank","w")
-
+    self.bal = open(".lineratm")
+    self.pin = open(".linerpin")
+    self.bankwriter=open(".linerbank")
+    self.ball=self.bal.read()
+    self.bell=self.bal.write()
   def withdraw(withdrawAmount, self):
-    writeBf = self.balance + withdrawAmount
-    self.file.write(writeBf)
+    writeBf = self.ball + withdrawAmount
+    self.bal.close()
+    self.writeSettings.write(writeBf)
     return writeBf
     
   def deposit(depositAmount, self):
     writeBf = depositAmount - self.balance
     
-    if (self.balance < depositAmount):
+    if (self.ball < depositAmount):
       print("Sorry, but you're too broke to withdraw that much.")
       
     self.file.write(writeBf)
     return writeBf
     
-  def balnk(self):
-    self.bankwriter.write(self.bal)
+  def blank(self):
+    self.bank.write(self.ball)
     
   def checkBal(self):
     return self.balance
@@ -66,4 +66,4 @@ class dataIo:
     return newPin
 
   def save_platform(self):
-    pass
+    sys.platform()

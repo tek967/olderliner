@@ -5,13 +5,12 @@ from data_io import *
 import threading
 
 class ATM:
-  def __init__(self):
+  def __init__(self, inputBuffer, loginState, miscBuf, bal):
     self.inputBuffer = None
     self.loginState = False
     self.miscBuf = None
     self.bal = open(".linerbal","r")
-    self.pinFile = open(".linerpin","r")
-
+  
   def initAtm(self):
     os.system("clear")
     print("Welcome to the ATM!")
@@ -35,12 +34,13 @@ class ATM:
     dataIo.deposit(self.inputBuffer, None)
     
   def createPin(create, self):
+    pinfile = '.linerpin'
     if (create == True):
-      if (exists(self.pinFile)):
+      if (exists(".linerpin")):
         print("You already created the pin, just log in.")
         pass
       elif (create == False):
-        os.remove(self.pinFile)
+        os.remove(pinfile)
 
       pincode = None
       verifyPin = None
