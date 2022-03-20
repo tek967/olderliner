@@ -2,6 +2,17 @@ import sys
 from array import *
 from ATM import bank as bkbal
 
+class tools:
+  def sort(array):
+    for i in range(i, len(array)):
+      key = array[i]
+      j = i - 1
+      while j >= 0 and key < array[j]:
+        array[j+1] = array[j]
+        key -= 1
+      array[j+1] = key
+    return array
+
 class settingsData:
 
   settingsFile = open(".linersettings")
