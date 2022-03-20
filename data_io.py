@@ -1,34 +1,32 @@
-from ntpath import join
 import sys 
 from array import *
 from ATM import bank as bkbal
 
 class settingsData:
-  def __init__(self):
-    settingsFile = open(".linersettings")
-    settingsFormattedFile = settingsFile.readlines()
 
-    settingArray = [
-      ["winsize" , None, None]
-    ]
+  settingsFile = open(".linersettings")
+  settingsFormattedFile = settingsFile.readlines()
 
-    settingArray[0][1] = settingsFormattedFile[1]
-    settingArray[0][2] = settingsFormattedFile[2]
+  settingArray = [
+    ["winsize" , None, None]
+  ]
 
-  def writeTableToFile(self):
+  settingArray[0][1] = settingsFormattedFile[1]
+  settingArray[0][2] = settingsFormattedFile[2]
+
+  def writeTableToFile():
     for i in self.settingArray:
       self.settingsFile.write(self.settingArray[i])
       for j in i:
         self.settingsFile.write(self.settingArray[i][j])
 
 
-  def writeSetting(entry, ct1, ct2, self):
+  def writeSetting(key, ct1, ct2):
     for i in self.settingsArray:
-      if i == entry:
+      if i == key:
         self.settingArray[i][1] = ct1
         self.settingArray[i][2] = ct2
     settingsData.writeTableToFile()
-          
 
 
 class dataIo: 
@@ -39,7 +37,7 @@ class dataIo:
     self.pin = open(".linerpin", "r")
     self.pinWriter = open(".linerpin", "w")
     self.bankwriter=open(".linerbank","w")
-    self.bal=bkbal
+    self.bal = bkbal
 
   def withdraw(withdrawAmount, self):
     writeBf = self.balance + withdrawAmount
@@ -70,3 +68,4 @@ class dataIo:
 
   def save_platform(self):
     pass
+  

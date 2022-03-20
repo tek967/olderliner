@@ -1,11 +1,9 @@
 ## Todo List
 
-* Write the settings engine
-* Do MapIO
-* Start writing the actual game
-* Finnish the bank
-* Write Sohpyy/Shopy
+* collision.py
+* character.py
+* map_io.py
 
-#### Potential Projects:
-* Make music
-* Port it to C# + Unity
+Start writing the base game /|\
+                             |
+
