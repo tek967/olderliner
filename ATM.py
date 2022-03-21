@@ -1,17 +1,15 @@
-import os,sys,time
+import os, sys, time
 from data_io import dataIo
 import threading
 
 class ATM:
-  def __init__(self):
-    self.inputBuffer = None
-    self.loginState = False
-    self.miscBuf = None
-    self.bal = open(".linerbal","r")
-    self.pinFile = (".linerpin","r")
-    self.bankbal=open(".linerbankbal","r")
-    def clear():
-      os.system("clear")
+  self.inputBuffer = None
+  self.loginState = False
+  self.bal = open(".linerbal","r")
+  self.pinFile = (".linerpin","r")
+  self.bankbal=open(".linerbankbal","r")
+  def clear():
+    os.system("clear")
       
   def bank(self):
     time.Time()
