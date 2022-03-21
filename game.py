@@ -6,4 +6,4 @@ class maingame:
         db = settingsData()
         self.winblow = open(".linerwindowsetting")
         self.Win = pygame.display.set_mode((db.settingArray[0][1],db.settingArray[0][2]))
-        self.hp = 10
+        self.healthbar=10
