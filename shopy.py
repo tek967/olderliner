@@ -2,40 +2,31 @@ from ATM import ATM
 from array import *
 class shop:
   def __init__(self):
-    self.catalog = [ # ints on the middle are prices
-      ["club", 0]
-      ["spiderweb", 0]
-      ["firstaid", 0] # old: firstaidkit
-      ["rocketlauncher", 0]
-      ["fly", 0]
-      ["gasgasgas", 0] # old: godspeed
-      ["doublejump", 0]
-      ["invincibility", 0]
-
-      # add them as we go, too much to debug already!
+    # item 0 = item id, item 1 = key, item 2 = price, item 3 = description, itme 4 = single use or not, item 5 = state
+    self.list = [
+      [ 0, "slippers", 8, "Use this to kill monsters.", True, None]
+      [ 1, "block", 16, "a plain old block what do you expect?", True, None]
+      [ 2, "spiderweb", 32, "Use this to pull u to a certain block.", False, None]
+      [ 3, "firstaid", 64, "Revive your health", True, None ]
+      [ 4, "godspeed", 128, "Use this to go too fast", False, None ]
+      [ 5, "rocketlauncher", 256, "Use this to kill monsters or destory blocks", True, None]
+      [ 6, "doubleJump", 512,"Jump twice, go high! ", False, None]
+      [ 7, "fly", 1024,"you can fly... but u maybe will die from flying too high", True, None ]
+      [ 8, "teleport", 2048,"teleport to certain block.", False, None ]
+      [ 9, "invincible", 4096, "You can only die from your stupidity or cowardliness now! you can only invincible", True, None]
     ]
+    
+  def shopMenu(self):
+    pass
+  
 
-  def buy(self):
-    if ATM.bal >= 0:
-      print("Sorry, but you're too broke to buy anything!")
-    catalogselection = input("What would you like to buy?")
-    # using nested for loops we can capture both dimensions of the array into the print statement
-    for i in self.catalog:
-      for j in i:
-        print("Item \"{}\": {} Dollars", i, j)
-    if catalogselection == "1":
-      pass
-    elif catalogselection == "2":
-      pass
-    elif catalogselection == "3":
-      pass
-    elif catalogselection == "4":
-      pass
-    elif catalogselection == "5":
-      pass
-    elif catalogselection == "6":
-      pass
-    elif catalogselection == "7":
-      pass
-  
-  
+
+
+
+
+
+
+
+
+
+

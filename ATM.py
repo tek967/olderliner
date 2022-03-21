@@ -1,16 +1,21 @@
-import os
-import sys
-from os.path import exists
-from data_io import *
+import os, sys, time
+from data_io import dataIo
 import threading
 
 class ATM:
-  def __init__(self, inputBuffer, loginState, miscBuf, bal):
-    self.inputBuffer = None
-    self.loginState = False
-    self.miscBuf = None
-    self.bal = open(".linerbal","r")
-  
+  self.inputBuffer = None
+  self.loginState = False
+  self.bal = open(".linerbal","r")
+  self.pinFile = (".linerpin","r")
+  self.bankbal=open(".linerbankbal","r")
+  def clear():
+    os.system("clear")
+      
+  def bank(self):
+    time.Time()
+    time.sleep(3600)
+    threading.thread()
+
   def initAtm(self):
     os.system("clear")
     print("Welcome to the ATM!")
