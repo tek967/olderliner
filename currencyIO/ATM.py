@@ -1,15 +1,15 @@
-import os, sys, time
-from data_io import dataIo
+import sys, os, time
+from data_io import DataIO
 import threading
 
 class ATM:
-  self.inputBuffer = None
-  self.loginState = False
-  self.bal = open(".linerbal","r")
-  self.pinFile = (".linerpin","r")
-  self.bankbal=open(".linerbankbal","r")
-  def clear():
-    os.system("clear")
+  def __init__(self) -> None:
+    self.inputBuffer = None
+    self.loginState = False
+    self.bal = open(".linerbal","r")
+    self.pinFile = (".linerpin","r")
+    self.bankbal = open(".linerbankbal","r")
+    
       
   def bank(self):
     time.Time()
@@ -19,29 +19,29 @@ class ATM:
   def initAtm(self):
     os.system("clear")
     print("Welcome to the ATM!")
-    
+
   def withdraw(self):
     if (self.inputBuffer != None):
-      dataIo.withdraw(self.inputBuffer, None)
+      DataIO.withdraw(inputBuffer, DataIO.__init__)
     elif (self.loginState == False):
       print("You need to log in First!")
 
-    self.inputBuffer = input("How much money to withdraw?")
-    dataIo.withdraw(self.inputBuffer, None)
+    inputBuffer = input("How much money to withdraw?")
+    DataIO.withdraw(inputBuffer, DataIO.__init__)
 
   def deposit(self):
-    if (self.inputBuffer != None):
-      dataIo.withdraw(self.inputBuffer, None)
+    if (inputBuffer != None):
+      DataIO.withdraw(inputBuffer, DataIO.__init__)
     elif (self.loginState == False):
       print("You need to log in First!")
 
-    self.inputBuffer = input("How much money to deposit?")
-    dataIo.deposit(self.inputBuffer, None)
+    inputBuffer = input("How much money to deposit?")
+    DataIO.deposit(inputBuffer, DataIO.__init__)
     
   def createPin(create, self):
     pinfile = '.linerpin'
     if (create == True):
-      if (exists(".linerpin")):
+      if (os.path.exists(".linerpin")):
         print("You already created the pin, just log in.")
         pass
       elif (create == False):
@@ -60,7 +60,7 @@ class ATM:
                 "you reentered was incorrect, please try again later.")
           print("The PIN Codes do not match, Please try again.")
         else:
-          misc = dataIo.writePin(verifyPin, None)
+          misc = DataIO.writePin(verifyPin, None)
           if (misc != verifyPin):
             print("A FATAL ERROR OCCURED, PLEASE REPORT THIS ISSUE") 
 
@@ -69,7 +69,7 @@ class ATM:
     verifyPin = None
     pin = None
     
-    if (self.loginState == True):
+    if (loginState == True):
       print("You don't need to log in, you are logged in already")
     for i in range(0, 3):
       pin = input("Enter your PIN: ")
@@ -79,15 +79,15 @@ class ATM:
           print("You tried too many times but the PIN code " + 
                 "you reentered was incorrect, please try again later.")
         print("The PIN Codes do not match, Please try again.")
-      elif (dataIo.getPin(None) != verifyPin):
+      elif (DataIO.getPin(None) != verifyPin):
         print("You didn't enter the correct PIN.")
       else:
-        self.loginState = True
+        loginState = True
 
   def ATMMenu(self):
     while (True):
       p = ATM
-      p.initAtm(None) 
+      p.initAtm(ATM.__init__) 
       choice = None
   
       print("Welcome to the ATM!\n" + 
@@ -104,17 +104,17 @@ class ATM:
       choice = input("What to do?: ")
   
       if choice == "1":
-        p.login(None)
+        p.login(ATM.__init__)
       elif choice == "2":
-        p.createPin(True, None)
+        p.createPin(True, ATM.__init__)
       elif choice == "3":
-        p.changePin(None)
+        p.changePin(ATM.__init__)
       elif choice == "4":
-        p.withdraw(None)
+        p.withdraw(ATM.__init__)
       elif choice == "5":
-        p.deposit(None)
+        p.deposit(ATM.__init__)
       elif choice=="6":
-        sys.exit()
+        sys.exit(0)
       elif choice=="7":
-        p.bank(None)
+        p.bank(ATM.__init__)
 

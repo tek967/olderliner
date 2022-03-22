@@ -1,6 +1,9 @@
 from ATM import ATM
+from data_io import Tools
 from array import *
-class shop:
+from pynput.keyboard import Key, Listener
+
+class Shop:
   def __init__(self):
     # item 0 = item id, item 1 = key, item 2 = price, item 3 = description, itme 4 = single use or not, item 5 = state
     self.list = [
@@ -17,7 +20,20 @@ class shop:
     ]
     
   def shopMenu(self):
+    Tools.clear()
+    print("Welcome to sohpyy!")
+    print("please pick an item to purchase or view.")
+
+    for i in self.list:
+      print(self.list[i][0] + ".  " + self.list[i][1])
+
+    print("press the number ID of the item you want to view/purchase.")
+    
+  def aboutPage(self):
     pass
+
+  with Listener(on_press = shopMenu) as listener:
+    listener.join()
   
 
 

@@ -1,7 +1,7 @@
-import sys 
+import sys, os
 from array import *
 
-class tools:
+class Tools:
   def sort(array):
     for i in range(i, len(array)):
       key = array[i]
@@ -11,35 +11,39 @@ class tools:
         key -= 1
       array[j+1] = key
     return array
+  def clear():
+    os.system("clear")
 
-class settingsData:
+class SettingsData:
 
-  settingsFile = open(".linersettings")
-  settingsFormattedFile = settingsFile.readlines()
+  def __init__(self) -> None:
+    self.settingsFile = open(".linersettings")
+    self.settingsFormattedFile = self.settingsFile.readlines()
 
-  settingArray = [
-    ["winsize" , None, None]
-  ]
+    self.settingArray = [
+      ["winsize",    None, None]
+      ["playerName", None ]
+    ]
 
-  settingArray[0][1] = settingsFormattedFile[1]
-  settingArray[0][2] = settingsFormattedFile[2]
+    self.settingArray[0][1] = self.settingsFormattedFile[1]
+    self.settingArray[0][2] = self.settingsFormattedFile[2]
 
-  def writeTableToFile():
+  def writeTableToFile(self):
     for i in self.settingArray:
       self.writeSettings.write(self.settingArray[i])
       for j in i:
         self.writeSettings.write(self.settingArray[i][j])
 
 
-  def writeSetting(key, ct1, ct2):
+  def writeSetting(key, ct1, ct2, self):
     for i in self.settingsArray:
       if i == key:
         self.settingArray[i][1] = ct1
         self.settingArray[i][2] = ct2
-    settingsData.writeTableToFile()
+    SettingsData.writeTableToFile()
 
 
-class dataIo: 
+class DataIo: 
   def __init__(self):
     writeBf = None
     self.balance = open(".lineratm", "r")
@@ -47,7 +51,6 @@ class dataIo:
     self.pin = open(".linerpin", "r")
     self.pinWriter = open(".linerpin", "w")
     self.bankwriter=open(".linerbank","w")
-    self.bal=bkbal
 
   def withdraw(withdrawAmount, self):
     writeBf = self.ball + withdrawAmount
