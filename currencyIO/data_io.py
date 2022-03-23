@@ -11,8 +11,15 @@ class Tools:
         key -= 1
       array[j+1] = key
     return array
+
   def clear():
     os.system("clear")
+
+  def createFileIfNotExist(fileName, openMode):
+    if os.path.exists(fileName) != True:
+      open(fileName, "x")
+    else:
+      pass
 
 class SettingsData:
 
@@ -21,8 +28,8 @@ class SettingsData:
     self.settingsFormattedFile = self.settingsFile.readlines()
 
     self.settingArray = [
-      ["winsize",    None, None]
-      ["playerName", None ]
+      ["winsize", None, None],
+      ["playerName", None]
     ]
 
     self.settingArray[0][1] = self.settingsFormattedFile[1]
@@ -43,7 +50,7 @@ class SettingsData:
     SettingsData.writeTableToFile()
 
 
-class DataIo: 
+class DataIO: 
   def __init__(self):
     writeBf = None
     self.balance = open(".lineratm", "r")
@@ -51,9 +58,8 @@ class DataIo:
     self.pin = open(".linerpin", "r")
     self.pinWriter = open(".linerpin", "w")
     self.bankwriter = open(".linerbank","w")
-    self.closeMe = self.file.close() # what is this??
-    self.closeMe = self.file.close()
-    self.closeMeDupe=self.pilose()cn.
+    self.closeBal = self.file.close()
+    self.closePIN = self.pin.close()
     self.error = None
 
   def deduct(deduct, self): 
