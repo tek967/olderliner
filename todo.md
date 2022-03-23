@@ -7,8 +7,8 @@
 
 #### Allocations:
 
-**sohpyy:** ezintegg
-**settings:** ezintegg
+**sohpyy:** ezintegg,jason
+**settings:** ezintegg,jason
 **mapio:** jason
 **game:** jason + ezintegg
 **bank:** ezintegg + jason

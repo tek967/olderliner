@@ -50,10 +50,20 @@ class DataIo:
     self.file = open(".lineratm", "w")
     self.pin = open(".linerpin", "r")
     self.pinWriter = open(".linerpin", "w")
-    self.bankwriter=open(".linerbank","w")
+    self.bankwriter = open(".linerbank","w")
+    self.error = None
+
+  def deduct(deduct, self): 
+    if int(self.balance) < deduct: # you do exception handling meowscripty
+      self.error = raise ValueError
+    if self.error:
+      print("you are too broke to with buy this")
+    else:
+      self.file = int(self.balance) - deduct
+      return
 
   def withdraw(withdrawAmount, self):
-    writeBf = self.ball + withdrawAmount
+    writeBf = self.bal + withdrawAmount
     self.bal.close()
     self.writeSettings.write(writeBf)
     return writeBf

@@ -1,6 +1,6 @@
 import sys
 import os
-from ATM import ATM
+from currencyIO.ATM import ATM
 
 def main():
   while (True):
@@ -28,7 +28,9 @@ def main():
       else:
         os.system("clear")
         print("Maybe try entering a valid choice?")
+
     except KeyboardInterrupt:
+
       print("\tDont be so abrupt with me! ")
       sys.exit(0)
       
