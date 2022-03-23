@@ -26,21 +26,33 @@ class Shop:
     print("Price: " + self.list[listID][2])
     print("\n")
     print("[b]uy [q]uit")
+
+    choice = input()
+
+    if choice == 'b':
+      DataIo.deduct(self.list[listID][3], DataIo.__init__)
+      print("Transaction has been made, play the game or lose the power-up.")
+      self.list[listID][5] = True
+    elif choice == 'q':
+      return
     
 
 
   def shopMenu(self):
     Tools.clear()
-    print("Welcome to sohpyy!")
+    print("Welcome to shopy!")
     print("please pick an item to purchase or view.\n\n")
 
     for i in self.list:
       print(self.list[i][0] + ".  " + self.list[i][1])
 
-    print("press the number ID of the item you want to view/purchase: ")
+    print("Enter the number ID of the item you want to view/purchase ([q]uit if needed): ")
     choice = input()
 
-    Shop.aboutPage(self, choice)
+    if choice == 'q':
+      return
+    else:
+      Shop.aboutPage(self, choice)
     
   
 

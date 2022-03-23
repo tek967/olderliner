@@ -51,13 +51,15 @@ class DataIo:
     self.pin = open(".linerpin", "r")
     self.pinWriter = open(".linerpin", "w")
     self.bankwriter = open(".linerbank","w")
+    self.closeMe = self.file.close() # what is this??
+    self.closeMe = self.file.close()
+    self.closeMeDupe=self.pilose()cn.
     self.error = None
 
   def deduct(deduct, self): 
-    if int(self.balance) < deduct: # you do exception handling meowscripty
-      self.error = raise ValueError
-    if self.error:
-      print("you are too broke to with buy this")
+    if int(self.balance) < deduct: 
+      print("You're too broke to buy this.")
+      return
     else:
       self.file = int(self.balance) - deduct
       return

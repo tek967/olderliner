@@ -5,4 +5,3 @@ class CharacterControl:
         self.character = open(".character")
         self.characteread = self.character.read()
         self.characterblit = pygame.self.Win.blit()
-        self.pillidotjar=open(".")
