@@ -35,8 +35,6 @@ class Shop:
       self.list[listID][5] = True
     elif choice == 'q':
       return
-    
-
 
   def shopMenu(self):
     Tools.clear()

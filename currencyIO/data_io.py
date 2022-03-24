@@ -29,7 +29,7 @@ class Tools:
     
     if shouldExit != False:
       sys.exit(0)
-
+      
 class SettingsData:
   def __init__(self) -> None:
     
@@ -45,13 +45,15 @@ class SettingsData:
       ["playerName", None]
     ] 
 
+    newCount = 0
     for i in range(len(self.settingArray)):
       for j in range(len(self.settingArray[i])):
+        
         if self.settingArray[i][j] == "winsize" or self.settingArray[i][j] == "playerName":
           pass
         else:
-          self.settingArray[i][j] = self.settingsFormattedFile[j] 
-          # j will start from 0 too, just use this var for convenience
+          self.settingArray[i][j] = self.settingsFormattedFile[newCount]
+          newCount += 1 
 
     Tools.print2DArray(self.settingArray, True)
 
@@ -67,7 +69,6 @@ class SettingsData:
         self.settingArray[i][1] = ct1
         self.settingArray[i][2] = ct2
     SettingsData.writeTableToFile()
-
 
 class DataIO: 
   def __init__(self):

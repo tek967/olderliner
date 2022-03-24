@@ -1,8 +1,6 @@
-import sys
-import os
+import sys, os
 from currencyIO.ATM import ATM
-from currencyIO.data_io import Tools
-from currencyIO.setting import windew
+from debug.constructClasses import init as const
 
 def main():
   while (True):
@@ -17,8 +15,7 @@ def main():
         print("Told ya its not done yet!")
         pass
       if choice == "2":
-        w = windew()
-        pass
+        const.menu()
       if choice == "3":
         os.system("clear")
         ATM.ATMMenu(None)

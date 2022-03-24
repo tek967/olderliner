@@ -1,6 +1,5 @@
-import sys, os, time
+import sys, os, time, threading
 from currencyIO.data_io import DataIO, Tools
-import threading
 
 class ATM:
   def __init__(self) -> None:
@@ -100,7 +99,7 @@ class ATM:
             "2. Create an ATM Pin\n" + 
             "3. Change your ATM Pin\n" + 
             "4. Withdraw some money from your wallet\n" + 
-            "5. Same money from your point store into your wallet\n"
+            "5. Save money from your point store into your wallet\n"
             "6. exit\n"
             "7. *testing* bank\n"
            )
@@ -121,4 +120,3 @@ class ATM:
         sys.exit(0)
       elif choice=="7":
         p.bank(ATM)
-
