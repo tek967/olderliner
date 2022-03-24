@@ -7,6 +7,7 @@ class ATM:
     self.inputBuffer = None
     self.loginState = False
     self.filesToCheck = [".linerbal", ".linerpin", ".linerbankbal"]
+    
     for i in self.filesToCheck:
       Tools.createFileIfNotExist(self.filesToCheck[i])
     

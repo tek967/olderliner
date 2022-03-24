@@ -15,33 +15,52 @@ class Tools:
   def clear():
     os.system("clear")
 
-  def createFileIfNotExist(fileName, openMode):
+  def createFileIfNotExist(fileName):
     if os.path.exists(fileName) != True:
       open(fileName, "x")
     else:
       pass
+  
+  def print2DArray(array, shouldExit):
+    for r in array:
+      for c in r:
+        print(c,end = " ")
+      print()
+    
+    if shouldExit != False:
+      sys.exit(0)
 
 class SettingsData:
-
   def __init__(self) -> None:
+    
+    if os.path.exists(".linersettings") != True:
+      Tools.createFileIfNotExist(".linersettings")
+    
     self.settingsFile = open(".linersettings")
+
     self.settingsFormattedFile = self.settingsFile.readlines()
 
     self.settingArray = [
       ["winsize", None, None],
       ["playerName", None]
-    ]
+    ] 
 
-    self.settingArray[0][1] = self.settingsFormattedFile[1]
-    self.settingArray[0][2] = self.settingsFormattedFile[2]
+    for i in range(len(self.settingArray)):
+      for j in range(len(self.settingArray[i])):
+        if self.settingArray[i][j] == "winsize" or self.settingArray[i][j] == "playerName":
+          pass
+        else:
+          self.settingArray[i][j] = self.settingsFormattedFile[j] 
+          # j will start from 0 too, just use this var for convenience
+
+    Tools.print2DArray(self.settingArray, True)
 
   def writeTableToFile(self):
     for i in self.settingArray:
       self.writeSettings.write(self.settingArray[i])
       for j in i:
         self.writeSettings.write(self.settingArray[i][j])
-
-
+  
   def writeSetting(key, ct1, ct2, self):
     for i in self.settingsArray:
       if i == key:

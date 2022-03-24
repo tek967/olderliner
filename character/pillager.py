@@ -1,19 +1,20 @@
 from character.villager import Villager
 import pygame, random
 from game.collision import CollisionControl
+from currencyIO.data_io import Tools
 from game.game import MainGame
 
 class Pillager:
     def __init__(self, MainGame):
 
         self.attack=20
-        self.pillidotjar = open(".pillidotjar")
+        Tools.createFileIfNotExist(".pilladotjar")
         self.pillidotjarread = self.pillidotjar.open()
         self.pillidotjarclose = self.pillidotjar.close()
         self.pilli = pygame.self.Win.blit()
-        self.chance = random.randint(0,100000000000000000)
+        self.chance = random.randint(0,1000000)
         self.pillager = None
-        self.chance = random.randint(0,100000000000000000)
+        self.chance = random.randint(0,1000000)
         
     def ifVillager(self):
         if None == None:

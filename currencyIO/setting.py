@@ -1,5 +1,5 @@
-from ATM import ATM
-from data_io import SettingsData
+from currencyIO.ATM import ATM
+from currencyIO.data_io import SettingsData
 import pygame
 class windew:
   def __init__(self):
@@ -8,8 +8,8 @@ class windew:
     self.width = None
     self.height = None
     
-    if SettingsData.settingArray[0][1] == None:
-      if SettingsData.settingArray[0][2] == None:
+    if SettingsData().settingArray[0][1] == None:
+      if SettingsData().settingArray[0][2] == None:
         self.choose = input("\nhow large shall the game window be?\n" +  
                             "[d]efault: 600x800\n" + 
                             "[m]iddle 960x1024\n" + 
@@ -25,7 +25,7 @@ class windew:
           self.height = 1024
           self.width = 1400
 
-        SettingsData.writeSetting(0, self.height, self.width, None)
+        SettingsData().writeSetting(0, self.height, self.width)
 
       else:
         pass

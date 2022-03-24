@@ -1,13 +1,15 @@
 import sys
 import os
 from currencyIO.ATM import ATM
+from currencyIO.data_io import Tools
+from currencyIO.setting import windew
 
 def main():
   while (True):
     try:
       choice = input("Welcome to liner! What to do?\n" + 
                     "1. Start the game in Pygame [incomplete]\n" + 
-                    "2. Start the settings menu in CLI [incomplete]\n" +
+                    "2. construct the settings class [development]\n" +
                     "3. Start the ATM [testing]\n" + 
                     "4. Exit\n\n:")
       if choice == "1":
@@ -15,8 +17,7 @@ def main():
         print("Told ya its not done yet!")
         pass
       if choice == "2":
-        os.system("clear")
-        print("Told ya its not done yet!")
+        w = windew()
         pass
       if choice == "3":
         os.system("clear")
@@ -30,7 +31,6 @@ def main():
         print("Maybe try entering a valid choice?")
 
     except KeyboardInterrupt:
-
       print("\tDont be so abrupt with me! ")
       sys.exit(0)
       
