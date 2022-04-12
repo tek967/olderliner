@@ -5,14 +5,13 @@ class ATM:
   def __init__(self) -> None:
     self.inputBuffer = None
     self.loginState = False
-    self.filesToCheck = [".linerbal", ".linerpin", ".linerbankbal"]
+
+    Tools.createFileIfNotExist(".linerbal")
+    Tools.createFileIfNotExist(".linerbankbal")
     
-    for i in self.filesToCheck:
-      Tools.createFileIfNotExist(self.filesToCheck[i])
-    
-    self.bal = open(self.filesToCheck[0])
-    self.pinFile = open(self.filesToCheck[0])
-    self.bankbal = open(self.filesToCheck[0])
+    self.bal = open(".linerbal")
+    self.pinFile = open(".linerpin")
+    self.bankbal = open(".linerbankbal")
       
   def bank(self):
     time.Time()
@@ -41,7 +40,7 @@ class ATM:
     inputBuffer = input("How much money to deposit?")
     DataIO().deposit(inputBuffer)
     
-  def createPin(create):
+  def createPin(create, self):
     pinfile = '.linerpin'
     if (create == True):
       if (os.path.exists(".linerpin")):
@@ -49,6 +48,7 @@ class ATM:
         pass
       elif (create == False):
         os.remove(pinfile)
+            
 
       pincode = None
       verifyPin = None

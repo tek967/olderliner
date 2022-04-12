@@ -35,3 +35,4 @@ class windew:
   ATM.check_event = None
   if ATM.check_event == quit:
     pygame.QUIT()
+

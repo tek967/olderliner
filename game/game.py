@@ -1,5 +1,5 @@
 import pygame
-from currencyIO.data_io import DataIo
+from currencyIO.data_io import DataIO
 from currencyIO.data_io import SettingsData
 
 class MainGame:

@@ -1,6 +1,4 @@
-from ATM import ATM
-from currencyIO.data_io import DataIo
-from data_io import Tools
+from currencyIO.data_io import DataIO, Tools
 from array import *
 
 class Shop:
@@ -30,7 +28,7 @@ class Shop:
     choice = input()
 
     if choice == 'b':
-      DataIo().deduct(self.list[listID][3])
+      DataIO().deduct(self.list[listID][3])
       print("Transaction has been made, play the game or lose the power-up.")
       self.list[listID][5] = True
     elif choice == 'q':
@@ -41,8 +39,8 @@ class Shop:
     print("Welcome to shopy!")
     print("please pick an item to purchase or view.\n\n")
 
-    for i in self.list:
-      print(self.list[i][0] + ".  " + self.list[i][1])
+    for i in range(0, len(self.list)):
+      print(self.list[i][0] + ".  " + self.list[i][1]+1)
 
     print("Enter the number ID of the item you want to view/purchase ([q]uit if needed): ")
     choice = input()

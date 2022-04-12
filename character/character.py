@@ -1,4 +1,3 @@
-from game.collision import CollisionControl
 import pygame
 class CharacterControl:
     def __init__(self,MainGame):
