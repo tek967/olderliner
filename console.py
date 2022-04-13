@@ -13,7 +13,7 @@ class console:
             "constclass"
         ]
         self.classList = [
-            
+            "atm"
         ]
         self.usage = (
             "USAGE:\nexit: exit <args: true,false>\n" +
@@ -57,6 +57,14 @@ class console:
             console.log(self.usage)
         elif command[0] == self.commandList[3]:
             console.log(self.thread_list)
+        elif command[0] == self.commandList[4]:
+            if command[1] not in self.classList:
+                console.log("there is no such thing to construct.")
+
+            if command[1] == self.classList[0]:
+                from currencyIO.ATM import ATM as a
+                a()
+
 
 
 
