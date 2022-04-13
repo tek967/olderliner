@@ -84,4 +84,5 @@ def main():
     print("\n"+console().usage)
     console().con()
 
-if __name__ == "__main__": main()
+if __name__ == "__main__": 
+    main()
