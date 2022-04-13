@@ -20,9 +20,9 @@ class DebugTools: #eathorn so debug takes one thread,game takes one thread,map_i
         pass
     def switch(self):
         self.debu = threading.start_new_thread(DebugTools.needle())
-        self.thread_set_name = threading.setName()
+        self.thread_set_name = threading.setName("debug")
         self.thread_start = threading.start()
-        self.thread_listening = threading.currentThread()
+        self.thread_listening = threading.current_Thread()
         self.thread_alive_listener = threading.isAlive()
         self.thread_watching = threading.run()
         
