@@ -8,11 +8,12 @@ class ATM:
 
     Tools.createFileIfNotExist(".linerbal")
     Tools.createFileIfNotExist(".linerbankbal")
-    
+    Tools.createFileIfNotExist(".linerpin")
+
     self.bal = open(".linerbal")
     self.pinFile = open(".linerpin")
     self.bankbal = open(".linerbankbal")
-      
+
   def bank(self):
     time.Time()
     time.sleep(3600)
@@ -39,7 +40,7 @@ class ATM:
 
     inputBuffer = input("How much money to deposit?")
     DataIO().deposit(inputBuffer)
-    
+
   def createPin(create, self):
     pinfile = '.linerpin'
     if (create == True):
@@ -48,7 +49,6 @@ class ATM:
         pass
       elif (create == False):
         os.remove(pinfile)
-            
 
       pincode = None
       verifyPin = None
@@ -56,7 +56,6 @@ class ATM:
       for i in range(0, 3):
         pincode = input("What PIN to set?")
         verifyPin = input("Please enter the PIN again")
-        
         if (pincode != verifyPin):
           if (i == 3):
             print("You tried too many times but the PIN code " + 

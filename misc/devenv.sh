@@ -1,17 +1,19 @@
-alias lcon='python3 $(pwd)/console.py'
-alias lgame='python3 $(pwd)/main.py'
+alias lcon='python3 $LINERDIR/console.py'
+alias lgame='python3 $LINERDIR/main.py'
 alias setworkingdir='
     echo "what is your liner git working directory?";
-    read dir;
-    echo "export LINERDIR=$dir" >> .zshrc;
-    echo "export LINERDIR=$dir" >> .bashrc;
-    echo "export LINERDIR=$dir" >> .bash_profile;
-    echo "export LINERDIR=$dir" >> .profile;
+    read dir1;
+    dir=$(pwd)/$dir1
+    echo "export LINERDIR=$dir" >> $HOME/.zshrc;
+    echo "export LINERDIR=$dir" >> $HOME/.bashrc;
+    echo "export LINERDIR=$dir" >> $HOME/.bash_profile;
+    echo "export LINERDIR=$dir" >> $HOME/.profile;
 '
 alias lgitup='
     if [ $LINERDIR == "" ]; then
         echo "you need to set you working directory first. do setworkingdir in your console after you sourced this file in your bashrc or zshrc or equivalent!";
         exit ;
+    fi
     
     echo "commit message? ";
     read commitmsg;
